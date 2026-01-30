@@ -1,0 +1,187 @@
+header {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #8c9df0, #5f7cff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  font-family: "Vazir";
+}
+
+.div1h {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-right: 40px;
+}
+
+.ul-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.ul-header li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.ul-header li:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.div2h {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  gap: 35px;
+}
+
+header button {
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Vazir";
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cart-btn {
+  background: linear-gradient(135deg, #4a6efe, #2359c5);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #4a6efe, #3b82f6);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #5f7cff, #2359c5);
+}
+
+header button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.div2h > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.div2h div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.div1h {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ul-header {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.ul-header a {
+  text-decoration: none;
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-box button {
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .ul-header,
+  .desktop-search,
+  .div2h {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* منوی موبایل */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.mobile-search {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

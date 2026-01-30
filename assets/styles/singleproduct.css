@@ -1,0 +1,518 @@
+:root {
+        --primary-color: #6480fd;
+        --secondary-color: #cfd8ff;
+        --white-color: #ffffff;
+        --text-color: #333333;
+        --gray-color: #f5f5f5;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: "Vazir";
+      }
+
+      body {
+        background-color: var(--white-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        margin: 0 auto;
+      }
+
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .column {
+        flex: 1;
+        min-width: 300px;
+        background-color: var(--white-color);
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        border: 1px solid var(--secondary-color);
+      }
+
+      .image-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid var(--secondary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-name {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 700;
+      }
+
+      .specs-column h2,
+      .actions-column h2 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--secondary-color);
+      }
+
+      .specs-list {
+        list-style-type: none;
+      }
+
+      .specs-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--gray-color);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .specs-list li:last-child {
+        border-bottom: none;
+      }
+
+      .spec-label {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .spec-value {
+        color: var(--text-color);
+      }
+
+      /* ستون اقدامات */
+      .actions-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        background-color: var(--gray-color);
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .quantity-label {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .quantity-btn {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .quantity-btn:hover {
+        background-color: #4a6bf5;
+        transform: scale(1.05);
+      }
+
+      .quantity-value {
+        font-size: 1.2rem;
+        font-weight: 600;
+        min-width: 30px;
+        text-align: center;
+      }
+
+      .add-to-cart-btn {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        padding: 18px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        margin-top: auto;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #4a6bf5;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(100, 128, 253, 0.2);
+      }
+
+      .comments-section {
+        background-color: var(--white-color);
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        clear: both;
+        width: 100%;
+      }
+
+      .comments-section h2 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--secondary-color);
+      }
+
+      .comment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .form-input,
+      .form-textarea {
+        padding: 14px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: var(--white-color);
+        transition: border-color 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+        min-width: 150px;
+      }
+
+      .submit-btn:hover {
+        background-color: #4a6bf5;
+      }
+
+      @media (max-width: 768px) {
+        .product-container {
+          flex-direction: column;
+        }
+
+        .column {
+          width: 100%;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .product-name {
+          font-size: 1.3rem;
+        }
+
+        .quantity-selector {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .quantity-controls {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .submit-btn {
+          align-self: stretch;
+          width: 100%;
+        }
+      }
+
+      .product-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .stock-status {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 5px;
+      }
+
+      .in-stock {
+        background-color: #e6f7ee;
+        color: #0a9c4d;
+      }
+
+      .rating {
+        color: #ffc107;
+        margin-top: 10px;
+      }
+
+      .comment-example {
+        background-color: var(--gray-color);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        border-right: 4px solid var(--primary-color);
+      }
+
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .comment-author {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .comment-date {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      @font-face {
+    font-family: 'vazir';
+    src: url('/assets/fonts/Vazir-Medium.woff');
+}
+
+/* footer */
+.main-footer {
+  width: 100%;
+  min-height: 320px;
+  padding: 40px 60px;
+  background: linear-gradient(135deg, #3051f3, #5f7cff);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: "Vazir";
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-title {
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 6px;
+  
+}
+
+.footer-title::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #ffdd57;
+  border-radius: 10px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  opacity: 1;
+  transform: translateX(-5px);
+  color: #ffdd57;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socials span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socials span:hover {
+  color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.footer-about {
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.enamad-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #8c9df0, #5f7cff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  font-family: "Vazir";
+}
+
+.div1h {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-right: 40px;
+}
+
+.ul-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.ul-header li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.ul-header li:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.div2h {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  gap: 35px;
+}
+
+header button {
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Vazir";
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cart-btn {
+  background: linear-gradient(135deg, #4a6efe, #2359c5);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #4a6efe, #3b82f6);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #5f7cff, #2359c5);
+}
+
+header button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.div2h > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.div2h div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+a{
+    text-decoration: none;
+}

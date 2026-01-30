@@ -1,0 +1,664 @@
+body{
+    margin: 0;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #8c9df0, #5f7cff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  font-family: "Vazir";
+  
+}
+
+/* جستجو */
+.search-box {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  position: relative;
+}
+
+.live-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  margin-top: 5px;
+  border: 2px solid #2359c5;
+}
+
+.live-search-results.active {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-result-item {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s ease;
+}
+
+.search-result-item:hover {
+  background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+  transform: translateX(-3px);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.search-result-item:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.search-result-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-result-image {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f6ff;
+  border: 1px solid #e0e4ff;
+}
+
+.search-result-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-result-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-result-title {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: #2359c5;
+  font-family: "Vazir";
+}
+
+.search-result-title mark {
+  background-color: #ffdd57;
+  color: #333;
+  padding: 0 2px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.search-result-price {
+  font-size: 11px;
+  color: #666;
+  font-weight: bold;
+  font-family: "Vazir";
+}
+
+.search-message, .search-loading {
+  padding: 15px;
+  text-align: center;
+  color: #666;
+  font-family: "Vazir";
+  font-size: 13px;
+}
+
+.search-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading-spinner {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2359c5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.live-search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.live-search-results::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.live-search-results::-webkit-scrollbar-thumb {
+  background: #2359c5;
+  border-radius: 10px;
+}
+
+.live-search-results::-webkit-scrollbar-thumb:hover {
+  background: #1e4eae;
+}
+
+.searchbar::placeholder {
+  color: #888;
+  font-size: 13px;
+  font-family: "Vazir";
+}
+
+@media (max-width: 768px) {
+  .live-search-results {
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    right: 15px;
+    max-height: 60vh;
+    z-index: 2000;
+  }
+  
+  .searchbar {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .search-result-item {
+    padding: 8px 10px;
+  }
+  
+  .search-result-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .search-result-title {
+    font-size: 12px;
+  }
+  
+  .search-result-price {
+    font-size: 10px;
+  }
+}
+
+@media (hover: none) {
+  .search-result-item:hover {
+    transform: none;
+    background: #f5f6ff;
+  }
+}
+
+.searchbar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(35, 89, 197, 0.3);
+}
+
+.div1h {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-right: 40px;
+  width: 70%;
+}
+
+.ul-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.ul-header li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.ul-header li:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.div2h {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  gap: 35px;
+}
+
+header button {
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Vazir";
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgb(240, 236, 236);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cart-btn {
+  background: linear-gradient(135deg, #4a6efe, #2359c5);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #4a6efe, #3b82f6);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #5f7cff, #2359c5);
+}
+
+header button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.div2h > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.div2h div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* دسته بندی ها */
+.category{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 220px 220px 220px 220px;
+    grid-template-rows: 220px 220px  ;
+    width: 100%;
+    height: 520px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap:53px;
+}
+.category div{
+    background-color: #cad4ffe9;
+    border-radius: 100%;
+    box-shadow: 1px 1px 12px 20px #cad4ffe9;
+}
+.category div:hover{
+    opacity: 50%;
+    transition: all ease .5s;
+}
+
+/* آخرین محصولات و کارت محصولات */
+
+.last-products{
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-rows: 320px 320px  ;
+    gap: 12px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 190px;
+    justify-content: center;
+
+}
+.product-card {
+  width: 220px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(135deg, #7f92ee, #9faeff);
+  border-radius: 18px;
+  font-family: "Vazir";
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.02);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.addtocart-btn {
+  height: 34px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2359c5, #3b82f6);
+  color: #fff;
+  font-family: "Vazir";
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addtocart-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  transform: scale(1.05);
+}
+
+h3{
+    font-size: 27px;
+    text-align: center;
+    font-family: "Vazir";
+
+}
+.website-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.website-info p{
+    width: 993px;
+    background-color: #CFD8FF;
+    color: rgb(68, 69, 70);
+    padding: 20px;
+    border-radius: 12px;
+    font-family: "Vazir";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* اسلایدر  */
+
+.container-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slider {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.slider__slides {
+  width: 100%;
+  padding-top: 45%;
+}
+
+.slider__slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    opacity: 0;
+}
+
+.slider__slide.active {
+    opacity: 1;
+}
+
+.slider__slide img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.slider__nav-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+    opacity: .8;
+    cursor: pointer;
+}
+
+#nav-button--prev {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+#nav-button--next {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+#nav-button--prev::after,
+#nav-button--next::after {
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 3px;
+    width: 40%;
+    height: 40%;
+}
+
+#nav-button--next::after{
+    top: 50%;
+    right: 50%;
+    transform: translate(25%, -50%) rotate(-45deg);
+}
+
+#nav-button--prev::after {
+    top: 50%;
+    right: 50%;
+    transform: translate(75%, -50%) rotate(135deg);
+}
+
+.slider__nav {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.slider__navlink {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    opacity: 1;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+.slider__navlink.active {
+    background-color: #fff;
+    border: 1px #333 solid;
+}
+
+
+@media screen and (max-width: 640px) {
+  .slider__nav-button {
+    height: 20px;
+    width: 20px;
+  }
+  .slider__navlink {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+
+/* footer */
+.main-footer {
+  width: 100%;
+  min-height: 320px;
+  padding: 40px 60px;
+  background: linear-gradient(135deg, #3051f3, #5f7cff);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: "Vazir";
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-title {
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 6px;
+  
+}
+
+.footer-title::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #ffdd57;
+  border-radius: 10px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  opacity: 1;
+  transform: translateX(-5px);
+  color: #ffdd57;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socials span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socials span:hover {
+  color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.footer-about {
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.enamad-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+
+@font-face {
+    font-family: 'vazir';
+    src: url('/assets/fonts/Vazir-Medium.woff');
+}
+
+a{
+  text-decoration: none;
+}

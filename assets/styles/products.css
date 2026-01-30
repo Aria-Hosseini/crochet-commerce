@@ -1,0 +1,385 @@
+    body {
+      font-family: "Vazir";
+      margin: 0;
+      padding: 0;
+      background: #f5f6ff;
+    }
+
+    .products-page {
+      display: flex;
+      gap: 20px;
+      padding: 20px 40px;
+    }
+
+    /* فیلتر دسته بندی */
+    .filter-sidebar {
+      width: 200px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .filter-sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .filter-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .filter-sidebar ul li {
+      padding: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .filter-sidebar ul li:hover,
+    .filter-sidebar ul li.active {
+      background: #3051f3;
+      color: #fff;
+    }
+
+    /* محصولات */
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+  width: 220px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(135deg, #7f92ee, #9faeff);
+  border-radius: 18px;
+  font-family: "Vazir";
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.02);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.addtocart-btn {
+  height: 34px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2359c5, #3b82f6);
+  color: #fff;
+  font-family: "Vazir";
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addtocart-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  transform: scale(1.05);
+}
+
+.main-footer {
+  width: 100%;
+  min-height: 320px;
+  padding: 40px 60px;
+  background: linear-gradient(135deg, #3051f3, #5f7cff);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: "Vazir";
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-title {
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 6px;
+  
+}
+
+.footer-title::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #ffdd57;
+  border-radius: 10px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  opacity: 1;
+  transform: translateX(-5px);
+  color: #ffdd57;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socials span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socials span:hover {
+  color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.footer-about {
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.enamad-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #8c9df0, #5f7cff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  font-family: "Vazir";
+}
+
+.div1h {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-right: 40px;
+}
+
+.ul-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.ul-header li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.ul-header li:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.div2h {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  gap: 35px;
+}
+
+header button {
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Vazir";
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cart-btn {
+  background: linear-gradient(135deg, #4a6efe, #2359c5);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #4a6efe, #3b82f6);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #5f7cff, #2359c5);
+}
+
+header button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.div2h > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.div2h div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+a{
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .products-page {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .filter-sidebar {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter-sidebar h3 {
+    font-size: 15px;
+  }
+
+  .filter-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .filter-sidebar ul li {
+    margin-bottom: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .products-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .product-title {
+    font-size: 13px;
+  }
+
+  .addtocart-btn {
+    height: 32px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .filter-sidebar ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-sidebar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+}
