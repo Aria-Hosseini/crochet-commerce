@@ -2,9 +2,9 @@
 
 require_once __DIR__ . "/../../functions/DB.php";
 
-function getCategory(){
+function getUsers(){
     global $conn;
-    $sql = "SELECT * FROM category";
+    $sql = "SELECT * FROM users";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();

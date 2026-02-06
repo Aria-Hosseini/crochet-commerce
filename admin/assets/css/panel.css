@@ -1,17 +1,17 @@
-.category-table {
+.panel-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.category-table th,
-.category-table td {
+.panel-table th,
+.panel-table td {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
-.category-table th {
+.panel-table th {
   background: #5f7cff;
   color: #fff;
 }
@@ -24,6 +24,17 @@
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 10px;
+  font-family: "Vazir";
+}
+
+.view-btn{
+  background-color: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Vazir";
 }
 
 .edit-btn {
@@ -33,6 +44,8 @@
   padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
+  font-family: "Vazir";
+
 }
 
 .delete-btn {
@@ -42,6 +55,8 @@
   padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
+  font-family: "Vazir";
+
 }
 
 .modal {
@@ -87,3 +102,4 @@
   padding: 6px 12px;
   border-radius: 6px;
 }
+

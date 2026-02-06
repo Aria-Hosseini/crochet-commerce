@@ -2,10 +2,10 @@
 
 require_once __DIR__ . "/../../functions/DB.php";
 
-function getCategory(){
+function getProducts(){
     global $conn;
-    $sql = "SELECT * FROM category";
+    $sql = "SELECT * FROM products";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
-}
+    }

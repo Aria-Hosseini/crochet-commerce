@@ -1,14 +1,14 @@
 function openForm() {
-  document.getElementById("categoryModal").style.display = "flex";
+  document.getElementById("PanelModal").style.display = "flex";
 }
 
 function closeForm() {
-  document.getElementById("categoryModal").style.display = "none";
+  document.getElementById("PanelModal").style.display = "none";
 }
 
 function addCategory() {
-  const body = document.getElementById("categoryBody");
-  const name = document.getElementById("categoryName").value.trim();
+  const body = document.getElementById("tablebody");
+  const name = document.getElementById("Name").value.trim();
   if (!name) return alert("نام دسته‌بندی رو وارد کن");
 
   body.insertAdjacentHTML(

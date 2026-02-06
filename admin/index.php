@@ -1,13 +1,3 @@
-<?php
-require_once "../functions/DB.php";
-require_once "functions/category.php";
-
-global $conn;
-$categories = getCategory();
-global $categories;
-
-?>
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
   <head>
@@ -16,7 +6,7 @@ global $categories;
     <title>Admin Panel</title>
 
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/panel.css">k
+    <link rel="stylesheet" href="assets/css/panel.css">
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />

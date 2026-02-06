@@ -1,31 +1,32 @@
 <?php
-    require_once __DIR__ . "/../functions/User.php";
-    $users = getUsers();
+    require_once __DIR__ . "/../functions/Product.php";
+    $products = getProducts();
 ?>
 
-<h2>مشتریان</h2>
+<h2>محصولات</h2>
+
+<button class="add-btn" onclick="openForm()">➕ افزودن محصول</button>
 
 <table class="panel-table">
   <thead>
     <tr>
       <th>#</th>
-      <th>نام و نام خانوادگی</th>
-      <th>ایمیل</th>
-      <th>تاریخ و ساعت عضویت</th>
+      <th>نام محصول</th>
+      <th>قیمت</th>
       <th>عملیات</th>
     </tr>
   </thead>
   <tbody id="tablebody">
 
   <?php 
-    global $users;
-    foreach($users as $rows) : ?>
+    global $products;
+    foreach($products as $rows) : ?>
     <tr>
       <td><?= $rows->id ?></td>
-      <td><?= $rows->name ?></td>
-      <td><?= $rows->email ?></td>
-      <td><?= $rows->created_at ?></td>
+      <td><?= $rows->title ?></td>
+      <td><?= $rows->price ?></td>
       <td>
+        <a href="../singleproduct.php?id=<?= $rows->id ?>"><button class="view-btn">مشاهده</button></a>
         <button class="edit-btn">ویرایش</button>
         <button class="delete-btn">حذف</button>
       </td>
