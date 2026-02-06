@@ -24,7 +24,7 @@
       <td><?= $rows->title ?></td>
       <td>
         <button class="edit-btn">ویرایش</button>
-        <button class="delete-btn">حذف</button>
+        <a href="/shop/admin/functions/actions.php?delete_category=<?= $rows->id ?>"><button class="delete-btn">حذف</button></a>
       </td>
     </tr>
     <?php }; ?>

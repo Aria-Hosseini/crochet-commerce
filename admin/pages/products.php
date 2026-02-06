@@ -28,7 +28,7 @@
       <td>
         <a href="../singleproduct.php?id=<?= $rows->id ?>"><button class="view-btn">مشاهده</button></a>
         <button class="edit-btn">ویرایش</button>
-        <button class="delete-btn">حذف</button>
+        <a href="/shop/admin/functions/actions.php?delete_product=<?= $rows->id ?>"><button class="delete-btn">حذف</button></a>
       </td>
     </tr>
     <?php endforeach; ?>

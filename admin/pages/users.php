@@ -27,7 +27,7 @@
       <td><?= $rows->created_at ?></td>
       <td>
         <button class="edit-btn">ویرایش</button>
-        <button class="delete-btn">حذف</button>
+        <a href="/shop/admin/functions/actions.php?delete_user=<?= $rows->id ?>"><button class="delete-btn">حذف</button></a>
       </td>
     </tr>
     <?php endforeach; ?>
