@@ -34,11 +34,17 @@
 
 <div class="modal" id="PanelModal">
   <div class="modal-content">
+      <button class="close-btn" onclick="closeForm()">×</button>
     <h3>افزودن دسته‌بندی</h3>
-    <input type="text" id="Name" placeholder="نام دسته‌بندی" />
+    <form action="/shop/admin/functions/actions.php?new-category" method="POST">
+      <div class="form-group">
+        <label>نام دسته بندی</label>
+        <input type="text" name="title" placeholder="یک اسم برای دسته بندی انتخاب کنید" required>
+      </div>    
     <div class="modal-actions">
-      <button class="save-btn" onclick="addCategory()">ثبت</button>
+      <button class="save-btn" onclick="addCategory()" type="submit">ثبت</button>
       <button class="cancel-btn" onclick="closeForm()">انصراف</button>
     </div>
+    </form>
   </div>
 </div>

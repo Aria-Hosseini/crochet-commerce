@@ -25,3 +25,13 @@ function addCategory() {
 
   closeForm();
 }
+
+function openForm() {
+  document.getElementById("PanelModal").classList.add("show");
+}
+
+function closeForm() {
+  document.getElementById("PanelModal").classList.remove("show");
+}
+
+document.getElementById("PanelModal").addEventListener("click", closeForm);

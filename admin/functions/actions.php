@@ -42,3 +42,51 @@ if(isset($_GET['delete_user'])){
     header("Location: /shop/admin/pages/users.php");
     exit;
 }
+
+if(isset($_GET['new-product']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $stock = $_POST['stock'];
+    $category = $_POST['category'];
+
+    $image = null;
+
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
+        $image = time() . '_' . $_FILES['image']['name'];
+
+        $uploadPath = $_SERVER['DOCUMENT_ROOT'] . '/shop/src/img/' . $image;
+
+        move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath);
+    }
+
+    global $conn;
+
+    $query = $conn->prepare(
+        "INSERT INTO products (title, description, price, stock, category_id, image)
+         VALUES (:title, :description, :price, :stock, :category, :image)"
+    );
+
+    $query->execute([
+        ':title' => $title,
+        ':description' => $description,
+        ':price' => $price,
+        ':stock' => $stock,
+        ':category' => $category,
+        ':image' => $image
+    ]);
+}
+
+if(isset($_GET['new-category']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
+    $title = $_POST['title'];
+
+    global $conn;
+
+    $query = $conn->prepare(
+        "INSERT INTO category (title, created_at) VALUES (:title, NOW())"
+    );
+
+    $query->execute([
+        ':title' => $title
+    ]);
+}
